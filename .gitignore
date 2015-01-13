@@ -1,0 +1,5 @@
+.project
+moritzTimetracker-web/.classpath
+moritzTimetracker-web/.settings/
+.settings/
+moritzTimetracker-ejb/.classpath
