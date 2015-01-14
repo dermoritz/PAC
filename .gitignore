@@ -3,3 +3,6 @@ moritzTimetracker-web/.classpath
 moritzTimetracker-web/.settings/
 .settings/
 moritzTimetracker-ejb/.classpath
+moritzTimetracker-ear/.checkstyle
+moritzTimetracker-ejb/.checkstyle
+moritzTimetracker-web/.checkstyle
