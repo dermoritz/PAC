@@ -18,7 +18,7 @@ package com.prodyna.pac.test;
 
 import static org.junit.Assert.assertNotNull;
 
-import java.util.logging.Logger;
+
 
 import javax.inject.Inject;
 
@@ -27,6 +27,7 @@ import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.Archive;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
 
 import com.prodyna.pac.model.Member;
 import com.prodyna.pac.service.MemberRegistration;

@@ -5,9 +5,12 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
@@ -44,12 +47,40 @@ public class User implements Serializable {
      */
     @OneToMany(mappedBy = "owner")
     private List<Booking> bookings;
-
+    
+    /**
+     * A user is registered (by manager) for many projects.
+     */
+    @ManyToMany(mappedBy = "users")
+    private List<Project> projects;
+    
+    
     /**
      * A user has a unique name.
      */
     @Column(unique = true)
     private String name;
+    
+    /**
+     * Role of this user.
+     */
+    @Enumerated(EnumType.STRING)
+    private UserRole role;
+    
+    
+    /**
+     * @return the projects
+     */
+    public final List<Project> getProjects() {
+        return projects;
+    }
+
+    /**
+     * @param projects the projects to set
+     */
+    public final void setProjects(List<Project> projects) {
+        this.projects = projects;
+    }
 
     /**
      * 
@@ -58,7 +89,7 @@ public class User implements Serializable {
     public final Long getId() {
         return this.id;
     }
-
+    
     /**
      * @return the version
      */

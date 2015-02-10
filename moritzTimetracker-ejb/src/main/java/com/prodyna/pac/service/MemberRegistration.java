@@ -16,13 +16,14 @@
  */
 package com.prodyna.pac.service;
 
-import com.prodyna.pac.model.Member;
-
 import javax.ejb.Stateless;
 import javax.enterprise.event.Event;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import java.util.logging.Logger;
+
+import org.slf4j.Logger;
+
+import com.prodyna.pac.model.Member;
 
 // The @Stateless annotation eliminates the need for manual transaction demarcation
 @Stateless
@@ -38,7 +39,7 @@ public class MemberRegistration {
     private Event<Member> memberEventSrc;
 
     public void register(Member member) throws Exception {
-        log.info("Registering " + member.getName());
+        log.debug("Registering " + member.getName());
         em.persist(member);
         memberEventSrc.fire(member);
     }

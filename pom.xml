@@ -48,7 +48,7 @@
 		<version.jboss.bom>8.2.1.Final</version.jboss.bom>
 		<!-- <version.wildfly>8.2.1.Final</version.wildfly> -->
 		<!-- used in testing profiles -->
-		<version.arquillian.container>8.2.0.Final</version.arquillian.container> 
+		<version.arquillian.container>8.2.0.Final</version.arquillian.container>
 
 
 
@@ -108,6 +108,27 @@
 				<version>${version.jboss.bom}</version>
 				<type>pom</type>
 				<scope>import</scope>
+			</dependency>
+			<!-- logging -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>1.7.10</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-slf4j-impl</artifactId>
+				<version>2.1</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-api</artifactId>
+				<version>2.1</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-core</artifactId>
+				<version>2.1</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

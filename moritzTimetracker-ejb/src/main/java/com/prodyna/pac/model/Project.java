@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Column;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
@@ -61,6 +62,27 @@ public class Project implements Serializable {
     @OneToMany(mappedBy = "project")
     private List<Booking> bookings;
     
+    /**
+     * Users that are registered to this project.
+     */
+    @ManyToMany
+    private List<User> users;
+    
+    
+    /**
+     * @return the users
+     */
+    public final List<User> getUsers() {
+        return users;
+    }
+
+    /**
+     * @param users the users to set
+     */
+    public final void setUsers(final List<User> users) {
+        this.users = users;
+    }
+
     /**
      * @return the id
      */
